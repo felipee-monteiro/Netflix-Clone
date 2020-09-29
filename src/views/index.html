@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <title>Netflix</title>
+</head>
+<body>
+    <div class="header-menu">
+        <img src="../images/netflix.jpg" alt="netflix" id="netflix-image">
+        <form action="/details" method="POST">
+            <input type="search" name="getSearch" id="search"/>
+            <button name="submit" id="submit"><i class="fas fa-search"></i></button>
+            <i class="fas fa-search" id="get-search"></i>
+        </form> 
+    </div>
+    <div class="introduction">
+      <img src="../images/2.jpg" alt="">
+      <img src="../images/1.jpg" alt="">
+      <img src="../images/2.jpg" alt="">
+    </div>
+    <section class="header">
+          <div class="loading">
+            <i class="fas fa-circle-notch fa-spin" id="loading-icon"></i>
+          </div>
+       <h1>Em alta</h1>
+          <div class="header-img">
+            {%for film in getFilmData.results %}
+              <form action="/getId" method="GET">
+                <button type="submit" name="film_id" id="film_id" value="{{film.id}}"><img src="https://image.tmdb.org/t/p/w300/{{film.poster_path}}"></button>
+              </form>
+            {%endfor %}
+       </div>
+    </section>
+    <section class="header">
+        <h1>By Netflix</h1>
+        <div class="header-img">
+            {%for film in getRecommendedByNetflix.results %}
+            <form action="/getId" method="GET">
+                <button type="submit" name="film_id" id="film_id" value="{{film.id}}"><img src="https://image.tmdb.org/t/p/w300/{{film.poster_path}}"></button>
+            </form>
+            {%endfor %}
+        </div>
+    </section>
+    <section class="header">
+        <h1>Tops</h1>
+       <div class="header-img">
+          {%for film in topRated.results %}
+          <form action="/getId" method="GET">
+            <button type="submit" name="film_id" id="film_id" value="{{film.id}}"><img src="https://image.tmdb.org/t/p/w300/{{film.poster_path}}"></button>
+          </form>
+          {%endfor %}
+        </div>
+    </section>
+    <section class="header">
+        <h1>Ação</h1>
+        <div class="header-img">
+          {%for film in filmAction.results %}
+          <form action="/getId" method="GET">
+            <button type="submit" name="film_id" id="film_id" value="{{film.id}}"><img src="https://image.tmdb.org/t/p/w300/{{film.poster_path}}"></button>
+          </form>
+          {%endfor %}
+        </div>
+    </section>
+    <section class="header">
+        <h1>Comédia</h1>
+        <div class="header-img">
+          {%for film in filmComedy.results %}
+          <form action="/getId" method="GET">
+            <button type="submit" name="film_id" id="film_id" value="{{film.id}}"><img src="https://image.tmdb.org/t/p/w300/{{film.poster_path}}"></button>
+          </form>
+          {%endfor %}
+        </div>
+    </section>
+    <section class="header">
+        <h1>Romance</h1>
+        <div class="header-img">
+          {%for film in filmRomance.results %}
+             <form action="/getId" method="GET">
+               <button type="submit" name="film_id" id="film_id" value="{{film.id}}"><img src="https://image.tmdb.org/t/p/w300/{{film.poster_path}}"></button>
+             </form>
+          {%endfor %}
+        </div>
+    </section>
+    <script src="/scripts/effects.js"></script>
+</body>
+</html>

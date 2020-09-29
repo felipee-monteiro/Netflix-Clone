@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/page-search.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <title>Resultados</title>
+</head>
+<body>
+    <header class="introduction">
+        <img src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg" alt="">
+    </header>
+        <div class="film-getdata">
+               <h1>{{getFilmDetails.results[0].title}}</h1>
+         <div class="film-data">
+             <h2>Pontos:&nbsp;{{getFilmDetails.results[0].vote_average}}/10 </h2>
+             <span>&#9679;</span>
+             <p class="popularity">Popularidade: &nbsp;{{getFilmDetails.results[0].popularity}}</p> 
+             <span>&#9679;</span>
+             {%if getFilmDetails.results[0].release_date != undefined %}
+                <h3>{{getFilmDetails.results[0].release_date.substring(0,4)}}</h3>
+             {%endif%}
+             <span>&#9679;</span>
+             <h3 id="genres">{{getFilmDetails.results[0].genres[0].name}}, {{getFilmDetails.results[0].genres[1].name}}, {{getFilmDetails.results[0].genres[2].name}}</h3>
+         </div>
+         <div class="film-trailer">
+             <a href="https://www.youtube.com/embed/{{filmVideos.results[0].key}}" target="blank"><i class="fas fa-play"></i>&nbsp;&nbsp;Assistir Trailer</a>
+             <button id="my-list">+ Minha Lista</button>
+        </div>
+            <p id="overview">{{getFilmDetails.results[0].overview}}</p>
+        </div>
+        <div class="film-photo">
+            <img src="https://image.tmdb.org/t/p/original{{getFilmDetails.results[0].backdrop_path}}" alt="{{film.title}}">
+        </div> 
+        <div class="for-you">
+            <span id="for-you">Outros resultados para {{search}}</span>
+        </div>
+        <div class="similar-film">
+            {%if getFilmDetails.total_results === 0 %}
+                    <p id="no-results">Infelizmente Nosso algoritmo não encontrou itens relacionados.</p>
+            {%else %}
+                {%for film in getFilmDetails.results %}
+                <form action="/getId" method="GET">
+                    <button type="submit" name="film_id" id="film_id" value="{{film.id}}"><img src="https://image.tmdb.org/t/p/w300/{{film.poster_path}}"></button>
+                </form>
+                {%endfor %}
+            {%endif %}
+        </div>
+</body>
+</html>
