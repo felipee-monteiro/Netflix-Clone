@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,html{
+    width: 100vw;
+    height: 100vh;
+    font-size: 60%;
+    background-color: black;
+    color: red;
+}
+.loading{
+    width: 65%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    margin: 0 auto;
+    transition: all 1s ease;
+    z-index: 9999999;
+}
+.loading i{
+ color: red;
+ font-size: 5rem; 
+}

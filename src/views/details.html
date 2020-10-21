@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/details.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <title>Detalhes do filme</title>
+</head>
+<body>
+      <header class="introduction">
+         <img src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg" alt="">
+      </header>
+      <div class="film-getdata">
+          {%if filmConsulter.title %}
+             <h1>{{filmConsulter.title}}</h1>
+          {%else %}
+             <h1>{{filmConsulter.name}}</h1>
+          {%endif %}
+       <div class="film-data">
+           <h2>Pontos:&nbsp;{{filmConsulter.vote_average}}/10 </h2>
+           <span>&#9679;</span>
+           <p class="popularity">Popularidade: &nbsp;{{filmConsulter.popularity}}</p> 
+           <span>&#9679;</span>
+           {% if filmConsulter.release_date != undefined %}
+               <h3>{{filmConsulter.release_date.substring(0,4)}}</h3>
+           {%else%}
+               <h3>{{filmConsulter.first_air_date}}</h3>
+           {%endif%}
+           <span>&#9679;</span>
+           <h3 id="genres">{{filmConsulter.genres[0].name}}, {{filmConsulter.genres[1].name}}, {{filmConsulter.genres[2].name}}</h3>
+       </div>
+       <div class="film-trailer">
+           <a href="https://www.youtube.com/embed/{{filmVideos.results[0].key}}" target="blank"><i class="fas fa-play"></i>&nbsp;&nbsp;Assistir Trailer</a>
+           <button id="my-list">+ Minha Lista</button>
+       </div>
+           <p id="overview">{{filmConsulter.overview}}</p>
+       </div>
+       <div class="film-photo">
+           <img src="https://image.tmdb.org/t/p/original{{filmConsulter.backdrop_path}}" alt="{{film.title}}">
+       </div> 
+       <div class="for-you">
+          <span id="for-you">Pra Você</span>
+       </div>
+       <div class="similar-film">
+       {%if filmConsulterSimilar.total_results === 0 %}
+               <p id="no-results">Infelizmente Nosso algoritmo não encontrou itens relacionados.</p>
+       {%else %}
+           {%for film in filmConsulterSimilar.results %}
+           <form action="/getId" method="GET">
+               <button type="submit" name="film_id" id="film_id" value="{{film.id}}"><img src="https://image.tmdb.org/t/p/w300/{{film.poster_path}}"></button>
+           </form>
+           {%endfor %}
+       {%endif %}
+       </div>
+       <script>
+           var image = document.querySelector('.film-photo img');
+           
+
+           window.addEventListener('scroll', () => {
+               const scroll = window.scrollY;
+
+               if (scroll > 0) {
+                   image.style.opacity = '0';
+                   image.style.transition = 'opacity 0.4s linear';
+               }else if(scroll < 135){
+                   image.style.opacity = '.4'
+               }
+           })
+       </script>
+</body>
+</html>

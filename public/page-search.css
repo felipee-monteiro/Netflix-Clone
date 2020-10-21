@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html{
+    width: 100vw;
+    height: 100vh;
+    font-size: 62%;
+    font-family: 'Roboto';
+}
+body{
+    color: white;
+    background-color: black;
+    font-family: 'Roboto';
+}
+.introduction {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 0;
+    background: none;
+}
+.introduction img{
+    width: 10rem;
+    max-width: 18rem;
+    height: 8rem;
+    max-height: 8rem;
+}
+.film-getdata{
+    display: flex;
+    justify-content: center;
+    align-items: initial;
+    flex-direction: column;
+    width: 100%;
+    height: 23.6rem;
+    padding: 2rem;
+    margin: 0;
+    text-align: justify;
+    margin-top: 21rem;
+    background: none;
+}
+.film-getdata h1{
+    font-size: 2.9rem;
+    text-align: left;
+}
+.film-getdata p{
+    font-size: 1.1rem;
+}
+.film-data{
+    display: flex;
+    align-items: center;
+    width: 20%;
+    height: 5rem;
+    font-size: 1rem;
+    text-align: center;
+    justify-content: initial;
+    margin-left: -1rem;
+    margin-bottom: 1rem;
+}
+.film-data h2, #genres{
+    margin: 1.5rem 1rem;
+    color: lawngreen;
+}
+#genres{
+    margin: 0;
+    color: white;
+    font-size: inherit;
+}
+.film-data h3{
+    margin: 3rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    color: red;
+}
+.film-photo{
+    display: flex;
+    width: 100%;
+    height: 60rem;
+    flex-wrap: nowrap;
+    margin-top: -45rem;
+}
+.film-photo img{
+    position: fixed;
+    width: 100%;
+    height: 60rem;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+    opacity: .4;
+}
+.popularity{
+    border-radius: .6rem;
+    padding: 0.7rem;
+}
+#overview{
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-overflow: ellipsis;
+}
+.film-trailer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 22.3rem;
+    height: 11%;
+    margin-bottom: 2rem;
+}
+.film-trailer a{
+    font-size: 1.2rem;
+    font-family: 'Roboto';
+    font-weight: 900;
+    background-color: ivory;
+    text-decoration: none;
+    padding: 0.8rem;
+    color: black;
+    border-radius: 0.6rem;
+}
+#my-list{
+    text-align: left;
+    background: none;
+    border: 1.5px solid white;
+    border-radius: .4rem;
+    padding: .6rem;
+    color: white;
+    cursor: pointer;
+    transition: 400ms ease-out;
+    font-weight: 600;
+}
+.for-you{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#for-you, .for-you button{
+    background-color: red;
+    font-size: 1.7rem;
+    color: white;
+    font-family: 'Raleway';
+    margin-top: 3rem;
+    border-radius: .6rem;
+    padding: .9rem;
+    margin: 0 .5rem;
+    border: none;
+    outline: none;
+}
+span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    margin: 0 .1rem;
+    font-size: .4rem;
+}
+
+button{
+    background: none;
+    border: none;
+}
+
+.similar-film{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7.5rem;
+    background-color: black;
+    box-shadow: 10px 10px 80px 140px black;
+}
+.similar-film img{
+    width: 20rem;
+    transform: scale(0.9);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.similar-film img:hover{
+    transform: scale(1);
+    transition: all 0.2s ease;
+}
+@media screen and (max-width: 400px){
+    body,html{
+        font-size: 53%;
+    }
+    .similar-film img{
+        width: 16rem;
+    }
+    .film-trailer{
+        width: 23rem;
+    }
+}
+@media screen and (min-width: 900px){
+    body, html{
+        font-size: 59%;
+    }
+    .film-photo img{
+        object-fit: initial;
+    }
+    .film-getdata{
+        width: 60rem;
+        margin-left: 1.5rem;
+    }
+    .film-getdata h2, #overview{
+        font-size: 1.2rem;
+        text-align: left;
+        text-overflow: ellipsis;
+    }
+    .film-data{
+        justify-content: initial;
+        margin-left: -1rem;
+        width: 37rem;
+    }
+    .similar-film{
+        margin-top: 5rem;
+    }
+    .similar-film img{
+        width: 19rem;
+    }
+    #no-results{
+        margin-top: 8rem;
+        font-size: 2.3rem;
+    }
+    #my-list:hover{
+        background: white;
+        color: black;
+        transition: 400ms ease-out;
+    }
+
+}
