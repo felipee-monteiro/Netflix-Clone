@@ -15,4 +15,8 @@ nunjucks.configure('src/views', {
 
 app.use('/', require('../src/routes'));
 
+<<<<<<< HEAD
 app.listen(process.env.PORT || 5000);
+=======
+app.listen(process.env.PORT || 5000);
+>>>>>>> 1771ecfe06311d7df584451f787894f2b4a61c32

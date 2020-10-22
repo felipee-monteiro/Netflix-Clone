@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+<<<<<<< HEAD
+=======
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x"
+  },
+>>>>>>> 1771ecfe06311d7df584451f787894f2b4a61c32
   "scripts": {
     "server": "node src/server.js"
   },
