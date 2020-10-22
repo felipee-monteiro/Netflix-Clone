@@ -5,7 +5,7 @@
   "main": "server.js",
   "engines": {
     "node": "12.x",
-    "npm": "6.x",
+    "npm": "6.x"
   },
   "scripts": {
     "server": "node src/server.js"
