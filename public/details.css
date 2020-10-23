@@ -102,11 +102,7 @@ body{
     align-items: center;
     margin-top: 7.5rem;
     background-color: black;
-<<<<<<< HEAD
     box-shadow: 10px 10px 80px 120px black;
-=======
-    box-shadow: 10px 10px 80px 140px black;
->>>>>>> 1771ecfe06311d7df584451f787894f2b4a61c32
 }
 .similar-film img{
     width: 20rem;
