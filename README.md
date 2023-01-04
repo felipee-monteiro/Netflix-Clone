@@ -9,6 +9,6 @@ Tecnologias e linguagens usadas:
 
 Como dar play no projeto ?
 
-1. instale o Node JS (https://nodejs.org);
-2. se estiver no linux ou mac, só baixe o node, entre na pasta src pelo seu terminal, e dê o comando npm install, e depois npm run server. se estiver no windows, baixe o gitbash e realize os passos anteriores.
-3. abra o navegador e digite o endereço: "http://localhost:5000".
+1. Instale o Node JS (https://nodejs.org);
+2. Entre na pasta src pelo seu terminal, e dê o comando npm install, e depois npm run server.
+3. Abra o navegador e digite o endereço: "http://localhost:5000".
